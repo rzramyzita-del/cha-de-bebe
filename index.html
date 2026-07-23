@@ -2,108 +2,574 @@
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Convite para o chá de bebê do Arthur Nobre Azeredo, no dia 18 de setembro, às 19h."
+    >
+
+    <meta name="theme-color" content="#f4ede3">
 
     <title>Chá de Bebê | Arthur Nobre Azeredo</title>
 
     <link rel="stylesheet" href="style.css">
 
+    <script src="script.js" defer></script>
 </head>
 
 <body>
 
-    <header>
+    <!-- Cabeçalho e menu -->
+    <header class="cabecalho">
 
-        <div class="container">
+        <nav class="navegacao container" aria-label="Navegação principal">
 
-            <p class="emoji">🧸</p>
-
-            <h3>Está chegando...</h3>
-
-            <h1>Arthur Nobre Azeredo</h1>
-
-            <p class="texto">
-
-                Com muito amor, convidamos você para celebrar
-                a chegada do nosso pequeno príncipe.
-
-            </p>
-
-            <a href="#evento" class="botao">
-                Ver Convite
+            <a href="#inicio" class="logo">
+                Arthur
             </a>
 
-        </div>
+            <button
+                class="menu-mobile"
+                type="button"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="menu-principal"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-    </header>
+            <ul class="menu" id="menu-principal">
 
-    <section id="evento">
+                <li>
+                    <a href="#inicio">Início</a>
+                </li>
 
-        <div class="container">
+                <li>
+                    <a href="#evento">O evento</a>
+                </li>
 
-            <h2>Informações</h2>
+                <li>
+                    <a href="#presentes">Presentes</a>
+                </li>
 
-            <p>📅 <strong>18 de Setembro</strong></p>
-
-            <p>🕖 <strong>19:00</strong></p>
-
-            <p>📍 Espaço D'Keith</p>
-
-            <p>
-                Av. Blumenau, 4309<br>
-                Jardim Bela Vista
-            </p>
-
-        </div>
-
-    </section>
-
-    <section>
-
-        <div class="container">
-
-            <h2>Os Papais</h2>
-
-            <p>
-
-                ❤️ Allan Henrique Azeredo<br>
-                ❤️ Thainara da Silva Nobre
-
-            </p>
-
-        </div>
-
-    </section>
-
-    <section>
-
-        <div class="container">
-
-            <h2>Lista de Presentes</h2>
-
-            <ul>
-
-                <li>🍼 Fralda RN</li>
-                <li>🍼 Fralda P</li>
-                <li>🍼 Fralda M</li>
-                <li>🍼 Fralda G</li>
-                <li>🧴 Lenço Umedecido</li>
+                <li>
+                    <a href="#confirmacao">Confirmar presença</a>
+                </li>
 
             </ul>
 
+        </nav>
+
+    </header>
+
+    <main>
+
+        <!-- Página inicial -->
+        <section class="hero" id="inicio">
+
+            <div class="decoracao decoracao-esquerda" aria-hidden="true"></div>
+            <div class="decoracao decoracao-direita" aria-hidden="true"></div>
+
+            <div class="container hero-conteudo">
+
+                <p class="hero-emoji" aria-hidden="true">
+                    🧸
+                </p>
+
+                <p class="hero-subtitulo">
+                    Está chegando...
+                </p>
+
+                <h1>
+                    Arthur
+                    <span>Nobre Azeredo</span>
+                </h1>
+
+                <p class="hero-texto">
+                    Com muito amor, convidamos você para celebrar
+                    conosco a chegada do nosso pequeno príncipe.
+                </p>
+
+                <div class="hero-acoes">
+
+                    <a href="#evento" class="botao botao-principal">
+                        Ver convite
+                    </a>
+
+                    <a href="#confirmacao" class="botao botao-secundario">
+                        Confirmar presença
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Contagem regressiva -->
+        <section class="contagem-secao" aria-labelledby="titulo-contagem">
+
+            <div class="container">
+
+                <p class="secao-subtitulo">
+                    Estamos contando os dias
+                </p>
+
+                <h2 id="titulo-contagem">
+                    Falta pouco para o Arthur chegar
+                </h2>
+
+                <div class="contagem" aria-live="polite">
+
+                    <div class="contagem-item">
+                        <strong id="dias">00</strong>
+                        <span>Dias</span>
+                    </div>
+
+                    <div class="contagem-item">
+                        <strong id="horas">00</strong>
+                        <span>Horas</span>
+                    </div>
+
+                    <div class="contagem-item">
+                        <strong id="minutos">00</strong>
+                        <span>Minutos</span>
+                    </div>
+
+                    <div class="contagem-item">
+                        <strong id="segundos">00</strong>
+                        <span>Segundos</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Informações do evento -->
+        <section class="secao evento" id="evento">
+
+            <div class="container">
+
+                <p class="secao-subtitulo">
+                    Você é nosso convidado
+                </p>
+
+                <h2>
+                    Informações do evento
+                </h2>
+
+                <p class="secao-descricao">
+                    Preparamos esse momento com muito carinho
+                    e ficaremos felizes em celebrar com você.
+                </p>
+
+                <div class="cards-evento">
+
+                    <article class="card-evento">
+
+                        <span class="card-icone" aria-hidden="true">
+                            📅
+                        </span>
+
+                        <h3>Data</h3>
+
+                        <p>
+                            18 de setembro de 2026
+                        </p>
+
+                    </article>
+
+                    <article class="card-evento">
+
+                        <span class="card-icone" aria-hidden="true">
+                            🕖
+                        </span>
+
+                        <h3>Horário</h3>
+
+                        <p>
+                            19h
+                        </p>
+
+                    </article>
+
+                    <article class="card-evento">
+
+                        <span class="card-icone" aria-hidden="true">
+                            📍
+                        </span>
+
+                        <h3>Local</h3>
+
+                        <p>
+                            Espaço D'Keith
+                        </p>
+
+                    </article>
+
+                </div>
+
+                <div class="endereco-evento">
+
+                    <div>
+
+                        <span class="endereco-label">
+                            Endereço
+                        </span>
+
+                        <p>
+                            Av. Blumenau, 4309<br>
+                            Jardim Bela Vista
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="https://www.google.com/maps/search/?api=1&query=Espaço+D%27Keith+Av.+Blumenau+4309+Jardim+Bela+Vista"
+                        class="botao botao-principal"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Abrir no mapa
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Pais -->
+        <section class="secao pais">
+
+            <div class="container pais-conteudo">
+
+                <p class="secao-subtitulo">
+                    Com amor
+                </p>
+
+                <h2>
+                    Os papais do Arthur
+                </h2>
+
+                <div class="pais-lista">
+
+                    <article class="card-pessoa">
+
+                        <span aria-hidden="true">
+                            🤎
+                        </span>
+
+                        <h3>
+                            Allan Henrique Azeredo
+                        </h3>
+
+                        <p>
+                            Papai
+                        </p>
+
+                    </article>
+
+                    <article class="card-pessoa">
+
+                        <span aria-hidden="true">
+                            🤎
+                        </span>
+
+                        <h3>
+                            Thainara da Silva Nobre
+                        </h3>
+
+                        <p>
+                            Mamãe
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Lista de presentes -->
+        <section class="secao presentes" id="presentes">
+
+            <div class="container">
+
+                <p class="secao-subtitulo">
+                    Um carinho para o Arthur
+                </p>
+
+                <h2>
+                    Sugestões de presentes
+                </h2>
+
+                <p class="secao-descricao">
+                    Sua presença é o mais importante. Caso queira
+                    presentear o Arthur, preparamos algumas sugestões.
+                </p>
+
+                <div class="lista-presentes">
+
+                    <article class="presente-card">
+                        <span aria-hidden="true">🍼</span>
+                        <h3>Fralda RN</h3>
+                        <p>Para os primeiros dias do Arthur.</p>
+                        <button type="button" class="selecionar-presente">
+                            Escolher presente
+                        </button>
+                    </article>
+
+                    <article class="presente-card">
+                        <span aria-hidden="true">🍼</span>
+                        <h3>Fralda P</h3>
+                        <p>Uma opção muito útil para os primeiros meses.</p>
+                        <button type="button" class="selecionar-presente">
+                            Escolher presente
+                        </button>
+                    </article>
+
+                    <article class="presente-card">
+                        <span aria-hidden="true">🧸</span>
+                        <h3>Fralda M</h3>
+                        <p>Um dos tamanhos mais utilizados pelo bebê.</p>
+                        <button type="button" class="selecionar-presente">
+                            Escolher presente
+                        </button>
+                    </article>
+
+                    <article class="presente-card">
+                        <span aria-hidden="true">🧸</span>
+                        <h3>Fralda G</h3>
+                        <p>Para acompanhar o crescimento do Arthur.</p>
+                        <button type="button" class="selecionar-presente">
+                            Escolher presente
+                        </button>
+                    </article>
+
+                    <article class="presente-card">
+                        <span aria-hidden="true">🧴</span>
+                        <h3>Lenços umedecidos</h3>
+                        <p>Item essencial para a rotina do bebê.</p>
+                        <button type="button" class="selecionar-presente">
+                            Escolher presente
+                        </button>
+                    </article>
+
+                    <article class="presente-card">
+                        <span aria-hidden="true">🧼</span>
+                        <h3>Kit de higiene</h3>
+                        <p>Produtos suaves e apropriados para bebê.</p>
+                        <button type="button" class="selecionar-presente">
+                            Escolher presente
+                        </button>
+                    </article>
+
+                </div>
+
+                <p class="presente-selecionado" id="presente-selecionado">
+                    Nenhum presente selecionado.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- Galeria -->
+        <section class="secao galeria" id="galeria">
+
+            <div class="container">
+
+                <p class="secao-subtitulo">
+                    Momentos especiais
+                </p>
+
+                <h2>
+                    Nossa espera pelo Arthur
+                </h2>
+
+                <div class="galeria-grid">
+
+                    <div class="galeria-item">
+                        <span>Foto do Arthur</span>
+                    </div>
+
+                    <div class="galeria-item">
+                        <span>Foto dos papais</span>
+                    </div>
+
+                    <div class="galeria-item">
+                        <span>Foto da gestação</span>
+                    </div>
+
+                    <div class="galeria-item">
+                        <span>Momento especial</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Confirmação de presença -->
+        <section class="secao confirmacao" id="confirmacao">
+
+            <div class="container confirmacao-conteudo">
+
+                <div class="confirmacao-texto">
+
+                    <p class="secao-subtitulo">
+                        Esperamos por você
+                    </p>
+
+                    <h2>
+                        Confirme sua presença
+                    </h2>
+
+                    <p>
+                        Preencha seus dados e envie a confirmação
+                        diretamente para os papais pelo WhatsApp.
+                    </p>
+
+                </div>
+
+                <form class="formulario-confirmacao" id="formulario-confirmacao">
+
+                    <div class="campo">
+
+                        <label for="nome">
+                            Seu nome
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            placeholder="Digite seu nome"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="campo">
+
+                        <label for="acompanhantes">
+                            Quantidade de acompanhantes
+                        </label>
+
+                        <select id="acompanhantes" name="acompanhantes">
+
+                            <option value="0">
+                                Somente eu
+                            </option>
+
+                            <option value="1">
+                                1 acompanhante
+                            </option>
+
+                            <option value="2">
+                                2 acompanhantes
+                            </option>
+
+                            <option value="3">
+                                3 acompanhantes
+                            </option>
+
+                            <option value="4">
+                                4 acompanhantes
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="campo">
+
+                        <label for="mensagem">
+                            Mensagem para os papais
+                        </label>
+
+                        <textarea
+                            id="mensagem"
+                            name="mensagem"
+                            rows="4"
+                            placeholder="Escreva uma mensagem especial"
+                        ></textarea>
+
+                    </div>
+
+                    <button type="submit" class="botao botao-whatsapp">
+                        Confirmar pelo WhatsApp
+                    </button>
+
+                    <p class="formulario-aviso">
+                        Você será direcionado para o WhatsApp.
+                    </p>
+
+                </form>
+
+            </div>
+
+        </section>
+
+        <!-- Mapa -->
+        <section class="mapa-secao">
+
+            <iframe
+                title="Mapa do Espaço D'Keith"
+                src="https://www.google.com/maps?q=Espaço%20D%27Keith%20Av.%20Blumenau%204309%20Jardim%20Bela%20Vista&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+
+        </section>
+
+    </main>
+
+    <!-- Botão flutuante -->
+    <a
+        href="#confirmacao"
+        class="whatsapp-flutuante"
+        aria-label="Confirmar presença pelo WhatsApp"
+    >
+        <span aria-hidden="true">💬</span>
+    </a>
+
+    <footer class="rodape">
+
+        <div class="container">
+
+            <p class="rodape-emoji" aria-hidden="true">
+                🧸
+            </p>
+
+            <h2>
+                Arthur Nobre Azeredo
+            </h2>
+
+            <p>
+                Feito com amor para celebrar sua chegada.
+            </p>
+
+            <small>
+                Allan e Thainara • 18 de setembro de 2026
+            </small>
+
         </div>
 
-    </section>
-
-    <footer>
-
-        Feito com ❤️ para celebrar a chegada do Arthur.
-
     </footer>
-
-    <script src="script.js"></script>
 
 </body>
 
